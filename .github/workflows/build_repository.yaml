@@ -5,8 +5,6 @@ on:
     branches:
       - master
       - debug
-  schedule:
-    - cron: "21 4 * * 0"
 
 jobs:
   build_repository:
@@ -17,27 +15,10 @@ jobs:
       run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M')"
 
     - name: Build Packages
-      uses: kopp/build-aur-packages@v1
+      uses: asakura42/build-aur-packages@master
       with:
         packages: >
-          arduino-ide-bin
-          azure-cli
-          conan
-          micronucleus-git
-          microsoft-edge-stable-bin
-          neovim-symlinks
-          onedrive-abraunegg
-          python-pydub
-          python-selenium
-          selenium-manager
-          uv-bin
-          jmtpfs
-          qtfm
-          skypeforlinux-stable-bin
-          srecord
-          vdhcoapp-bin
-          visual-studio-code-bin
-          xfig
+          filebot47
 
     - name: List generated Files
       run: ls -1 > ${{ github.workspace }}/files.txt
