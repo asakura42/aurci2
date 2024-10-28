@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - debug
+  workflow_dispatch:
 
 jobs:
   build_repository:
